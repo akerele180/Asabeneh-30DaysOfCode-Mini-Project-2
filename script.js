@@ -109,6 +109,13 @@ let bio_3Titles_H3 = document.createElement('h4');
 
 let bio_4 = document.createElement('div');
 bio_4.className = 'keywords';
+let spans = document.createElement('span');
+asabenehChallenges2020['keywords'].forEach(element => {
+    spans.innerHTML = '#' + element;
+    bio_4.appendChild(spans);
+    return spans;
+});
+console.log(asabenehChallenges2020['keywords'])
 
 
 // APPENDING THE CREATED FOOTERS TO THE DOM AND GIVING IT ELEMENTS
@@ -130,7 +137,20 @@ for(let i=0; i<asabenehChallenges2020['author']['titles'].length; i++){
     let li = document.createElement('li');
     ul_1.appendChild(li);
     li.innerHTML = asabenehChallenges2020['author']['titles'][i][1];
-    li.style.listStyleImage = "url('./images/seedling-1.png')"
+    if (i==0){
+    li.style.listStyleImage = "url('./images/seedling-1.png')"}
+    else if (i==1){
+        li.style.listStyleImage = "url('./images/personal computer-1.png')"
+    }
+    else if (i==2){
+        li.style.listStyleImage = "url('./images/Globe with meridians-1.png')"
+    }
+    else if (i==3){
+        li.style.listStyleImage = "url('./images/fire-1.png')"
+    }
+    else {
+        li.style.listStyleImage = "url('./images/notebook-1.png')"
+    }
 }
 
 bio_3Titles_2.appendChild(bio_3Titles_H2);
@@ -163,16 +183,18 @@ bio_2.innerHTML = asabenehChallenges2020['author']['bio'];
 bio_3Titles_H1.innerHTML = 'Titles';
 bio_3Titles_H2.innerHTML = 'Skills';
 bio_3Titles_H3.innerHTML = 'Qualifications';
+bio_4.textContent = 'Keywords'
 
-
-
-// ---------------------------STYLING THE FOOTER--------------------------------
+// ----------------------------STYLING THE FOOTER--------------------------------
 bio_1.style.cssText = 'text-align: center; font-weight: bold; font-size: 20px; text-transform: capitalize; margin-bottom: 40px';
 bio_2.style.cssText = 'text-align: center; font-size: 15.55px; margin-bottom: 40px;'
 bio_3.style.cssText = 'display: flex; flex-direction: row; justify-content: space-between';
-ul_1.style.padding = '0'
-ul_2.style.padding = '0'
-ul_3.style.padding = '0'
+ul_1.style.cssText = 'padding: 0; margin: 0';
+ul_2.style.cssText = 'padding: 0; margin: 0';
+ul_3.style.cssText = 'padding: 0; margin: 0';
 footer.style.cssText = 'width: 60vw; margin: 0 auto';
 document.getElementById('fullName').style.marginBottom = '3px';
-document.getElementById
+bio_3Titles_H1.style.cssText = 'margin:  0 0 5px -20px;'
+bio_3Titles_H2.style.cssText = 'margin:  0 0 5px -20px;'
+bio_3Titles_H3.style.cssText = 'margin:  0 0 5px -20px;';
+bio_4.style.fontWeight = 'bold'
