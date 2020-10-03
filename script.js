@@ -108,11 +108,17 @@ let bio_3Titles_H2 = document.createElement('h4');
 let bio_3Titles_H3 = document.createElement('h4');
 
 let bio_4 = document.createElement('div');
+let bio_4_text = document.createElement('h4');
 bio_4.className = 'keywords';
-let spans = document.createElement('span');
+bio_4.appendChild(bio_4_text);
 asabenehChallenges2020['keywords'].forEach(element => {
+    let spans = document.createElement('p');
     spans.innerHTML = '#' + element;
     bio_4.appendChild(spans);
+    spans.style.cssText = 'font-size: 10px; padding: 10px; border-radius: 15px; margin: 5px; margin-left: 15px; display: inline-block';
+    var colors = ['green', 'yellow', 'red', 'pink', 'brown', 'teal', '#FFDDD2', '#C77DFF', '#264253', '#F77F00']
+    const random = Math.floor(Math.random()*10)
+    spans.style.backgroundColor = colors[random]
     return spans;
 });
 console.log(asabenehChallenges2020['keywords'])
@@ -175,6 +181,7 @@ for(let i=0; i<asabenehChallenges2020['author']['qualifications'].length; i++){
     }
 footer.appendChild(bio_4);
 
+
 bio_1a.innerHTML = asabenehChallenges2020['author']['firstName'] + ' ' + asabenehChallenges2020['author']['lastName'];
 // socialLinks.textContent = 'Akerele Tosin James'
 
@@ -183,7 +190,7 @@ bio_2.innerHTML = asabenehChallenges2020['author']['bio'];
 bio_3Titles_H1.innerHTML = 'Titles';
 bio_3Titles_H2.innerHTML = 'Skills';
 bio_3Titles_H3.innerHTML = 'Qualifications';
-bio_4.textContent = 'Keywords'
+bio_4_text.textContent = 'Keywords'
 
 // ----------------------------STYLING THE FOOTER--------------------------------
 bio_1.style.cssText = 'text-align: center; font-weight: bold; font-size: 20px; text-transform: capitalize; margin-bottom: 40px';
@@ -197,4 +204,4 @@ document.getElementById('fullName').style.marginBottom = '3px';
 bio_3Titles_H1.style.cssText = 'margin:  0 0 5px -20px;'
 bio_3Titles_H2.style.cssText = 'margin:  0 0 5px -20px;'
 bio_3Titles_H3.style.cssText = 'margin:  0 0 5px -20px;';
-bio_4.style.fontWeight = 'bold'
+bio_4_text.style.marginBottom = "1px"
